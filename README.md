@@ -4,6 +4,7 @@ Jercog, D., Roxin, A., Barthó, P., Luczak, A., Compte, A., & de la Rocha, J. (2
 Major changes include a MATLAB implementation rather than C++ and the addition of our EtOH variable to adjust UDS transitions. 
 
 **Description**
+
 Pull all folder contents into MATLAB's working directory.
 Open analysisScript.m and press Run
 
