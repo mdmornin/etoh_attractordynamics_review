@@ -164,45 +164,45 @@ end
 
 %% Plot Adaptation Current Over EtOH Dose
 if includeNoise == 0
-    evalDoseWindow = [1 1.5 2 2.5 3 3.5 4 4.5 5];
-    refData = res{evalDoseWindow(end)};
-    [~,maxpeakAll] = findpeaks(refData(:,3));
-    maxWindow = maxpeakAll(2) - maxpeakAll(1);
-    lenMax = length(1:maxWindow);
-    [~,refpeakAll] = findpeaks(res{1}(:,3));
-    refPeak = refpeakAll(1);
-
-    figure(2); hold on
-
-    for i = evalDoseWindow
-        presRes = res{i};
-        [~,presPeaks] = findpeaks(presRes(1:maxWindow,3));
-        presRefPeak = presPeaks(1);
-        winStart = presRefPeak - refPeak + 1;
-        winEnd = winStart + lenMax - 1;
-        plot(1:maxWindow, presRes(winStart:winEnd,3),'linewidth', 2)
-    end
-    legend(num2str(evalDoseWindow'))
-    xlabel('Time (ms)')
-    ylabel('Adaptation Current')
-    set(gca,'TickDir','out','Box','off','FontName','Arial','FontSize',20,'FontWeight','bold')
-
-    % Plot Adaptation Current Over EtOH Dose - First Peak Only
-
-
-    figure(3); hold on
-
-    for i = evalDoseWindow
-        presRes = res{i};
-        [~,presPeaks] = findpeaks(presRes(:,3));
-        presRefPeak = presPeaks(1);
-        presWin = presPeaks(2) - presPeaks(1);
-        plot(1:presWin, presRes(1:presWin,3),'linewidth', 2)
-    end
-    legend(num2str(evalDoseWindow'))
-    xlabel('Time (ms)')
-    ylabel('Adaptation Current')
-    set(gca,'TickDir','out','Box','off','FontName','Arial','FontSize',20,'FontWeight','bold')
+%     evalDoseWindow = [1 1.5 2 2.5 3 3.5 4 4.5 5];
+%     refData = res{evalDoseWindow(end)};
+%     [~,maxpeakAll] = findpeaks(refData(:,3));
+%     maxWindow = maxpeakAll(2) - maxpeakAll(1);
+%     lenMax = length(1:maxWindow);
+%     [~,refpeakAll] = findpeaks(res{1}(:,3));
+%     refPeak = refpeakAll(1);
+% 
+%     figure(2); hold on
+% 
+%     for i = evalDoseWindow
+%         presRes = res{i};
+%         [~,presPeaks] = findpeaks(presRes(1:maxWindow,3));
+%         presRefPeak = presPeaks(1);
+%         winStart = presRefPeak - refPeak + 1;
+%         winEnd = winStart + lenMax - 1;
+%         plot(1:maxWindow, presRes(winStart:winEnd,3),'linewidth', 2)
+%     end
+%     legend(num2str(evalDoseWindow'))
+%     xlabel('Time (ms)')
+%     ylabel('Adaptation Current')
+%     set(gca,'TickDir','out','Box','off','FontName','Arial','FontSize',20,'FontWeight','bold')
+% 
+%     % Plot Adaptation Current Over EtOH Dose - First Peak Only
+% 
+% 
+%     figure(3); hold on
+% 
+%     for i = evalDoseWindow
+%         presRes = res{i};
+%         [~,presPeaks] = findpeaks(presRes(:,3));
+%         presRefPeak = presPeaks(1);
+%         presWin = presPeaks(2) - presPeaks(1);
+%         plot(1:presWin, presRes(1:presWin,3),'linewidth', 2)
+%     end
+%     legend(num2str(evalDoseWindow'))
+%     xlabel('Time (ms)')
+%     ylabel('Adaptation Current')
+%     set(gca,'TickDir','out','Box','off','FontName','Arial','FontSize',20,'FontWeight','bold')
 
 
     % Plot Adaptation Current Over EtOH Dose - First Peak Only - Aligned
